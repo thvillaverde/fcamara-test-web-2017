@@ -42,8 +42,8 @@ export class LoginPageComponent implements OnInit {
     
     this.dataService.authenticate(this.form.value)
     .subscribe(result => {
-      localStorage.setItem('fc.token', result.token);
-      localStorage.setItem('fc.user', JSON.stringify(result.user));
+      console.log(result);
+      localStorage.setItem('fc.token', result.access_token);
       this.router.navigateByUrl('/home');
     }, error =>{
       alert('Login ou senha invalido');

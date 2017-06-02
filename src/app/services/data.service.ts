@@ -13,8 +13,13 @@ export class DataService
 
     getProducts()
     {
+        var token = localStorage.getItem('fc.token');
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', `Bearer ${token}`); Headers
+        let options = new RequestOptions({ headers: headers });
+        
         return this.http
-            .get(this.serviceUrl + 'v1/products')
+            .get(this.serviceUrl + 'v1/products', options)
             .map((res: Response) => res.json());
     }
 
