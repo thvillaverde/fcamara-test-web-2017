@@ -1,0 +1,29 @@
+<section class="section">
+  <div class="container">
+    <div class="heading animated fadeIn">
+      <h1 class="title">Produtos</h1>
+      <h2 class="subtitle">
+        Lista
+      </h2>
+    </div>
+    <br>
+    <table class="table is-striped">
+      <thead>
+        <tr>
+          <th class="has-text-centered">Id</th>
+          <th class="has-text-centered">Produto</th>
+          <th class="has-text-centered">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td class="has-text-centered">{{product.Id}}</td>
+          <td class="has-text-centered">{{product.Title}}</td>
+          <td class="has-text-centered">{{ product.Price | currency:'BRL':true }}</td>
+        </tr>
+
+      </tbody>
+    
+    </table>
+  </div>
+</section>
